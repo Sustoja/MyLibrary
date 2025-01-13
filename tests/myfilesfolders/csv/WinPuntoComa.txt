@@ -1,0 +1,7 @@
+NPOL;Linea_negocio;Producto;Garantia;Concepto;Fecha_ini;Fecha_vcto;Tipo_prima;Periodicidad;Importe;Seguro_anyo_natural
+103290615;AUTOS;Producto 1;Garantia 1;Emisión;01/06/2022;31/05/2023;Periódica;Anual;232.51;No
+103299996;AUTOS;Producto 1;Garantia 1;Emisión;10/07/2022;09/07/2023;Periódica;Anual;269.24;No
+103340683;AUTOS;Producto 1;Garantia 1;Emisión;01/04/2022;31/03/2023;Periódica;Semestral ;231.71;No
+103384871;AUTOS;Producto 1;Garantia 1;Emisión;01/05/2022;30/04/2023;Periódica;Anual;206.42;No
+103411690;AUTOS;Producto 1;Garantia 1;Emisión;05/05/2022;04/05/2023;Periódica;Anual;225.02;No
+103413993;AUTOS;Producto 1;Garantia 1;Emisión;26/04/2022;25/04/2023;Periódica;Anual;243.91;No
