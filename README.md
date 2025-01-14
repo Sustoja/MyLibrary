@@ -28,6 +28,9 @@ fichero que se le pase como argumento. Admite documentos con extensión PDF, DOC
 5. **[MyConfig](./src/MyConfig/README.md):** Proporciona una variable global "cfg" para tener acceso 
 a los valores de configuración de una aplicación desde todos sus módulos.
 
+6. **[MyLogging](./src/MyLogging/README.md):** Proporciona una variable global "logger" para registrar mensajes 
+desde todos los modulos de una aplicación, tanto por el terminal como en fichero, y usando color rojo para el 
+nivel de WARNING y superiores.
 
 ## Contribuciones
 Se agradecen las contribuciones mediante fork del repositorio y solicitudes de pull request.
