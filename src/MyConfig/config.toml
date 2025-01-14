@@ -1,0 +1,12 @@
+# Config file in toml format
+# https://realpython.com/python-toml/
+
+excel_dir = '../Excel'
+active_pol = ['Datos_Poliza1', 'A']
+columns_and_types = {'A'='str', 'B'='str', 'C'='int', 'D'='int', 'E'='int', 'F'='int'}
+
+[Datos_Poliza1]
+sheet = 'Datos_Poliza1'
+relational_dependencies = [
+    'F', 'Productos', 'A',
+]

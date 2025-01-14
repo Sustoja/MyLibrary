@@ -25,10 +25,12 @@ obtener (PDF, XLSX, JPG, etc.)
 4. **[TextExtractor](./src/FilesAndFolders/textextractor/README.md):** Devuelve como texto plano el contenido del 
 fichero que se le pase como argumento. Admite documentos con extensión PDF, DOCX, MD y TXT.
 
+5. **[MyConfig](./src/MyConfig/README.md):**: Proporciona una variable global "cfg" para tener acceso 
+a los valores de configuración de una aplicación desde todos sus módulos.
+
 
 ## Contribuciones
 Se agradecen las contribuciones mediante fork del repositorio y solicitudes de pull request.
 
 ## Licencia
 Este proyecto utiliza la Licencia MIT. Consulte el archivo [LICENSE](LICENSE.txt) para más información.
-
