@@ -1,14 +1,6 @@
-import os
 from pathlib import Path
-from src.MyLogging import logger, is_color_supported, LOG_FILE_NAME
+from src.MyLogging import logger, LOG_FILE_NAME
 
-
-
-def test_is_color_supported():
-    if os.name == 'posix':
-        assert is_color_supported() is True
-    else:
-        assert is_color_supported() is False
 
 
 def test_reset_log_file_no_limit():

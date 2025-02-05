@@ -1,28 +1,19 @@
+import colorama
 import logging
-import os
+import re
+from colorama import Fore
 from pathlib import Path
 
+colorama.init(autoreset=True)
 
-# Colores para el texto por pantalla.
-COLORS = {
-    'WHITE': '\033[97m',
-    'RED': '\033[91m',
-    'GREEN': '\033[92m',
-}
-DEFAULT_COLOR = COLORS['WHITE']
-
-def is_color_supported() -> bool:
-    return os.name == 'posix'
 
 class TerminalFilter(logging.Filter):
     """
     Filtro para colorear el texto en el terminal según el nivel de criticidad mensajes.
-    Compatible solo con sistemas que soportan colores ANSI (no en Windows)
     """
     def filter(self, record):
-        if is_color_supported():
-            color = COLORS["RED"] if record.levelno > logging.INFO else DEFAULT_COLOR
-            record.msg = f'{color}{record.msg}{DEFAULT_COLOR}'
+        color = Fore.RED if record.levelno > logging.INFO else Fore.WHITE
+        record.msg = f'{color}{record.msg}'
         return True # Permite que el mensaje continúe al manejador
 
 class FileFilter(logging.Filter):
@@ -30,8 +21,8 @@ class FileFilter(logging.Filter):
     Filtro para eliminar los códigos de color  antes de escribirlos en el archivo de registro.
     """
     def filter(self, record):
-        for color in COLORS.values():
-            record.msg = record.msg.replace(color, "")
+        color_codes = re.compile(r'\x1B\[[0-9;]*[mK]')
+        record.msg = color_codes.sub('', record.msg)
         return True  # Permite que el mensaje continúe al manejador
 
 class MyLogger:
@@ -74,8 +65,5 @@ class MyLogger:
 
     def reset_log_file(self, limit=-1) -> None:
         if self.log_size > limit:
-            try:
-                with self.log_path.open('w') as log_file:
-                    log_file.truncate(0)
-            except (FileNotFoundError, PermissionError, OSError) as e:
-                self.log.error(f"Error al truncar el archivo de log: {e}")
+            with self.log_path.open('w') as log_file:
+                log_file.truncate(0)

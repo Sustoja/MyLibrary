@@ -1,5 +1,5 @@
 import logging
-from .logclass import MyLogger, is_color_supported
+from .logclass import MyLogger
 
 # Configuración del logger global que usarán todos los módulos que importen este paquete.
 
@@ -13,4 +13,4 @@ try:
 except Exception as e:
     raise RuntimeError(f"Error al inicializar el logger global: {e}")
 
-__all__ = ["logger"]
+__all__ = ["logger", "LOG_FILE_NAME"]
